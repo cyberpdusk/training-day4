@@ -1,0 +1,502 @@
+:root {
+    --color-primary: #eb2f64;
+    --color-primary-light: #FF3366;
+    --color-primary-dark: #BA265D;
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0, .06);
+
+    --line: 1px solid var(--color-grey-light-2);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    /* 1rem = 10px, 10px/16px = 62.5% */
+    font-size: 62.5%;
+}
+
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+    background-image: linear-gradient(to right bottom, var(--color-grey-light-1), var(--color-grey-light-2));
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+
+}
+
+/*Media Screen*/
+
+@media only screen and (max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+
+}
+
+/***********************Nav-bar****************************/
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background: #ffff;
+}
+
+.svg {
+    filter: invert(.4)
+}
+
+
+.nav input[type=text] {
+    padding: 0 10px 0 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 25px;
+    opacity: 50%;
+    background: var(--color-grey-light-4);
+    width: 380px;
+    height: 33px;
+    background-image: url(../img/SVG/magnifying-glass.svg);
+    background-repeat: no-repeat;
+    background-position: 350px;
+}
+
+
+.logo {
+    width: 4%;
+}
+
+
+header .user {
+    border-radius: 50%;
+    width: 35px;
+}
+
+.icon {
+    display: flex;
+
+}
+
+.img {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-right: 40px;
+    justify-content: center;
+}
+
+.img .svg {
+    width: 22px;
+}
+
+.img p {
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+/*********************Side page******************************/
+.homepage {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.side {
+    background-color: var(--color-grey-dark-1);
+    height: auto;
+    width: 200px;
+    border: none;
+    padding: 30px 0 0px 0;
+}
+
+.side ul li {
+    padding: 15px 10px;
+    list-style-type: none;
+    color: var(--color-grey-light-1);
+}
+
+.panel .homepage .side .option {
+    padding-left: 10px;
+}
+
+.panel .homepage .side ul li:hover {
+    background: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark));
+}
+
+.panel .homepage .side .option.home .icon {
+    background: url(../img/SVG/home.svg) no-repeat 0 0;
+    width: 18px;
+    height: 17px;
+    margin-right: 15px;
+    filter: invert(.9);
+}
+
+.panel .homepage .side .option.flight .icon {
+    background: url(../img/SVG/aircraft-take-off.svg) no-repeat 0 0;
+    width: 18px;
+    height: 19px;
+    margin-right: 15px;
+    filter: invert(.9);
+}
+
+.panel .homepage .side .option.carrental .icon {
+    background: url(../img/SVG/key.svg) no-repeat 0 0;
+    width: 18px;
+    height: 19px;
+    margin-right: 15px;
+    filter: invert(.9);
+}
+
+.panel .homepage .side .option.tours .icon {
+    background: url(../img/SVG/map.svg) no-repeat 0 0;
+    width: 19px;
+    height: 19px;
+    margin-right: 15px;
+    filter: invert(.9);
+}
+
+.panel .homepage .side .option {
+    display: flex;
+    align-items: center;
+
+}
+
+/* Footer */
+.container {
+    margin-top: 550px;
+}
+
+.container p {
+    margin: 0 20px 0 30px;
+    text-align: center;
+    color: var(--color-grey-dark-3);
+}
+
+
+/********************* HomePage*****************************/
+
+/************Hotel-Image*********/
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 0;
+    margin: 0;
+
+
+}
+
+.hotelPage .row .column img {
+    width: 100%;
+}
+
+/************Hotel-Info*********/
+.hotelInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+.hotelInfo .hotelRating {
+    display: flex;
+    align-items: center;
+}
+
+.hotelInfo h1 {
+    font-weight: 100;
+    padding: 20px;
+}
+
+.hotelInfo .starBox {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.hotelInfo .starBox svg {
+    padding: .1rem;
+    width: 17px;
+    fill: var(--color-primary)
+}
+
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.rating .locationPoint .location {
+    padding: 0 10px 0 0;
+}
+
+.locationPoint {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: var(--color-primary);
+    font-weight: bold;
+    text-decoration: underline;
+    fill: var(--color-primary);
+}
+
+.rating .votes {
+    display: block;
+    width: 70px;
+    height: 60px;
+    background: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: white;
+}
+
+.rating .votes h1 {
+    font-size: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+.rating .votes p {
+    font-size: 7px;
+    padding: 0;
+    margin: 0;
+}
+
+/********Hotel-Reviews****************/
+
+.reviews {
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+
+.reviews .page {
+    padding: 50px 0 0 50px;
+}
+
+
+.reviews .page .review {
+    display: flex;
+    flex-direction: column;
+    width: 370px;
+    height: 500px;
+    background-color: white;
+    box-shadow: var(--shadow-light);
+}
+
+.reviews .page .review1 p {
+    text-align: left;
+    padding: 10px;
+    font-weight: 700;
+    color: var(--color-grey-dark-2);
+    padding: 20px;
+}
+
+.page .reviews .page .line {
+    border: 6px solid grey;
+    width: 100px;
+    height: 10px;
+}
+
+hr {
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 85%;
+
+}
+
+.reviews .page .review2 {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.reviews .page .review3 {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.revImg .userImg {
+    position: absolute;
+
+
+}
+
+.revImg .userImg1 {
+    position: relative;
+    left: 40px;
+    border-radius: 50%;
+    border: 1px solid #ffff;
+    width: 25px;
+}
+
+.revImg .userImg2 {
+    position: relative;
+    left: 25px;
+    border-radius: 50%;
+    border: 1px solid #ffff;
+    width: 25px;
+}
+
+.revImg .userImg3 {
+    position: relative;
+    left: 12px;
+    border-radius: 50%;
+    border: 1px solid #ffff;
+    width: 25px;
+}
+
+.revImg .userImg4 {
+    position: relative;
+    border-radius: 50%;
+    border: 1px solid #ffff;
+    width: 25px;
+}
+
+/*************Page 2*********************************/
+
+.page2 {
+    padding: 50px 0 0 30px;
+
+}
+
+.page2 .reviewer {
+    display: grid;
+    grid-template-rows: auto auto auto;
+
+}
+
+.reviews .page2 .reviewer .reviewer1 {
+    width: 150px;
+    height: 220px;
+    background-color: #fff;
+    box-shadow: var(--shadow-light);
+
+}
+
+.reviews .page2 .reviewer .reviewer2 {
+    margin: 25px 0 0 0;
+    width: 140px;
+    height: 210px;
+    background-color: #fff;
+
+}
+
+.reviews .page2 .reviewer .reviewer1>p {
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-grey-dark-2);
+    padding: 20px;
+}
+
+.reviews .page2 .reviewer .reviewer2>p {
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-grey-dark-2);
+    padding: 20px;
+}
+
+.reviews .page2 .userImage {
+    display: inline-flex;
+    padding: 10px 10px;
+}
+
+.reviews .page2 .reviewerImg {
+    border-radius: 50%;
+    width: 30px;
+}
+
+.reviews .page2 .userImage .userName>p1 {
+    text-align: center;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+.reviews .page2 .userImage .userName>p2 {
+    text-align: center;
+    font-size: 6px;
+}
+
+.reviews .page2 .userImage>h1 {
+    color: var(--color-primary);
+}
+
+.reviews .page2 .reviewer p4 {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: bold;
+
+
+}
+
+.page3 {
+    padding: 50px;
+}
+
+.page3 .text h1 {
+    font-weight: 400;
+    text-align: center;
+    font-size: 20px;
+}
+
+.page3 .text {
+    margin: 100px;
+}
+
+.bookButton .button {
+    background: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    border: none;
+    border-radius: 50px;
+    width: 150px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.bookButton {
+    padding: 10px 0 0 0;
+}
